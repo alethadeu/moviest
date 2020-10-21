@@ -12,7 +12,8 @@ class TitleHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String releaseDate = movie.releaseDate;
+    String releaseDate =
+        movie.releaseDate != null ? movie.releaseDate : movie.firstAirDate;
     List<String> dateArray = releaseDate.split('-');
     String year = dateArray[0];
 
@@ -24,7 +25,8 @@ class TitleHeader extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(movie.title, style: Theme.of(context).textTheme.headline5),
+                Text(movie.title != null ? movie.title : movie.name,
+                    style: Theme.of(context).textTheme.headline5),
                 SizedBox(height: kDefaultPadding),
                 Row(
                   children: <Widget>[

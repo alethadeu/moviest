@@ -45,7 +45,9 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
         body: SingleChildScrollView(
           child: Column(
             children: <Widget>[
-              CategoryList(),
+              CategoryList(callBackList: (category) {
+                controller.fetchMovieByCategory(category);
+              }),
               buildGenresObserver(),
               SizedBox(height: kDefaultPadding),
               buildMovieObserver()
@@ -85,7 +87,12 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
 
       var movieResponse = controller.movieResponse.value;
       List<Movie> movies = movieResponse.results;
-      return MovieCarousel(movies: movies);
+      return MovieCarousel(
+        movies: movies,
+        callBackMovieCarousel: () {
+          controller.incrementPage();
+        },
+      );
     });
   }
 }

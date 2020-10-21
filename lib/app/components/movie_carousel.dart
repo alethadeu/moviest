@@ -5,8 +5,10 @@ import 'dart:math' as math;
 import 'movie_card.dart';
 
 class MovieCarousel extends StatefulWidget {
+  final Function() callBackMovieCarousel;
   final List<Movie> movies;
-  MovieCarousel({Key key, this.movies}) : super(key: key);
+  MovieCarousel({Key key, this.movies, this.callBackMovieCarousel})
+      : super(key: key);
 
   @override
   _MovieCarouselState createState() => _MovieCarouselState();
@@ -42,6 +44,10 @@ class _MovieCarouselState extends State<MovieCarousel> {
           onPageChanged: (value) {
             setState(() {
               initialPage = value;
+
+              if (value == widget.movies.length - 1) {
+                widget.callBackMovieCarousel();
+              }
             });
           },
           itemCount: _movies.length,

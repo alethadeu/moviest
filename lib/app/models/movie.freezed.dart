@@ -28,6 +28,8 @@ class _$MovieTearOff {
       String overview,
       @JsonKey(name: 'release_date') String releaseDate,
       int id,
+      @JsonKey(name: 'original_name') String name,
+      @JsonKey(name: 'first_air_date') String firstAirDate,
       @JsonKey(name: 'vote_average') double voteAverage,
       double popularity,
       bool video,
@@ -43,6 +45,8 @@ class _$MovieTearOff {
       overview: overview,
       releaseDate: releaseDate,
       id: id,
+      name: name,
+      firstAirDate: firstAirDate,
       voteAverage: voteAverage,
       popularity: popularity,
       video: video,
@@ -79,6 +83,10 @@ mixin _$Movie {
   @JsonKey(name: 'release_date')
   String get releaseDate;
   int get id;
+  @JsonKey(name: 'original_name')
+  String get name;
+  @JsonKey(name: 'first_air_date')
+  String get firstAirDate;
   @JsonKey(name: 'vote_average')
   double get voteAverage;
   double get popularity;
@@ -104,6 +112,8 @@ abstract class $MovieCopyWith<$Res> {
       String overview,
       @JsonKey(name: 'release_date') String releaseDate,
       int id,
+      @JsonKey(name: 'original_name') String name,
+      @JsonKey(name: 'first_air_date') String firstAirDate,
       @JsonKey(name: 'vote_average') double voteAverage,
       double popularity,
       bool video,
@@ -130,6 +140,8 @@ class _$MovieCopyWithImpl<$Res> implements $MovieCopyWith<$Res> {
     Object overview = freezed,
     Object releaseDate = freezed,
     Object id = freezed,
+    Object name = freezed,
+    Object firstAirDate = freezed,
     Object voteAverage = freezed,
     Object popularity = freezed,
     Object video = freezed,
@@ -154,6 +166,10 @@ class _$MovieCopyWithImpl<$Res> implements $MovieCopyWith<$Res> {
       releaseDate:
           releaseDate == freezed ? _value.releaseDate : releaseDate as String,
       id: id == freezed ? _value.id : id as int,
+      name: name == freezed ? _value.name : name as String,
+      firstAirDate: firstAirDate == freezed
+          ? _value.firstAirDate
+          : firstAirDate as String,
       voteAverage:
           voteAverage == freezed ? _value.voteAverage : voteAverage as double,
       popularity:
@@ -180,6 +196,8 @@ abstract class _$MovieCopyWith<$Res> implements $MovieCopyWith<$Res> {
       String overview,
       @JsonKey(name: 'release_date') String releaseDate,
       int id,
+      @JsonKey(name: 'original_name') String name,
+      @JsonKey(name: 'first_air_date') String firstAirDate,
       @JsonKey(name: 'vote_average') double voteAverage,
       double popularity,
       bool video,
@@ -207,6 +225,8 @@ class __$MovieCopyWithImpl<$Res> extends _$MovieCopyWithImpl<$Res>
     Object overview = freezed,
     Object releaseDate = freezed,
     Object id = freezed,
+    Object name = freezed,
+    Object firstAirDate = freezed,
     Object voteAverage = freezed,
     Object popularity = freezed,
     Object video = freezed,
@@ -231,6 +251,10 @@ class __$MovieCopyWithImpl<$Res> extends _$MovieCopyWithImpl<$Res>
       releaseDate:
           releaseDate == freezed ? _value.releaseDate : releaseDate as String,
       id: id == freezed ? _value.id : id as int,
+      name: name == freezed ? _value.name : name as String,
+      firstAirDate: firstAirDate == freezed
+          ? _value.firstAirDate
+          : firstAirDate as String,
       voteAverage:
           voteAverage == freezed ? _value.voteAverage : voteAverage as double,
       popularity:
@@ -256,6 +280,8 @@ class _$_Movie implements _Movie {
       this.overview,
       @JsonKey(name: 'release_date') this.releaseDate,
       this.id,
+      @JsonKey(name: 'original_name') this.name,
+      @JsonKey(name: 'first_air_date') this.firstAirDate,
       @JsonKey(name: 'vote_average') this.voteAverage,
       this.popularity,
       this.video,
@@ -292,6 +318,12 @@ class _$_Movie implements _Movie {
   @override
   final int id;
   @override
+  @JsonKey(name: 'original_name')
+  final String name;
+  @override
+  @JsonKey(name: 'first_air_date')
+  final String firstAirDate;
+  @override
   @JsonKey(name: 'vote_average')
   final double voteAverage;
   @override
@@ -303,7 +335,7 @@ class _$_Movie implements _Movie {
 
   @override
   String toString() {
-    return 'Movie(backdropPath: $backdropPath, originalLanguage: $originalLanguage, posterPath: $posterPath, originalTitle: $originalTitle, voteCount: $voteCount, genreIds: $genreIds, title: $title, overview: $overview, releaseDate: $releaseDate, id: $id, voteAverage: $voteAverage, popularity: $popularity, video: $video, adult: $adult)';
+    return 'Movie(backdropPath: $backdropPath, originalLanguage: $originalLanguage, posterPath: $posterPath, originalTitle: $originalTitle, voteCount: $voteCount, genreIds: $genreIds, title: $title, overview: $overview, releaseDate: $releaseDate, id: $id, name: $name, firstAirDate: $firstAirDate, voteAverage: $voteAverage, popularity: $popularity, video: $video, adult: $adult)';
   }
 
   @override
@@ -338,6 +370,11 @@ class _$_Movie implements _Movie {
                     .equals(other.releaseDate, releaseDate)) &&
             (identical(other.id, id) ||
                 const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.name, name) ||
+                const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.firstAirDate, firstAirDate) ||
+                const DeepCollectionEquality()
+                    .equals(other.firstAirDate, firstAirDate)) &&
             (identical(other.voteAverage, voteAverage) ||
                 const DeepCollectionEquality()
                     .equals(other.voteAverage, voteAverage)) &&
@@ -363,6 +400,8 @@ class _$_Movie implements _Movie {
       const DeepCollectionEquality().hash(overview) ^
       const DeepCollectionEquality().hash(releaseDate) ^
       const DeepCollectionEquality().hash(id) ^
+      const DeepCollectionEquality().hash(name) ^
+      const DeepCollectionEquality().hash(firstAirDate) ^
       const DeepCollectionEquality().hash(voteAverage) ^
       const DeepCollectionEquality().hash(popularity) ^
       const DeepCollectionEquality().hash(video) ^
@@ -390,6 +429,8 @@ abstract class _Movie implements Movie {
       String overview,
       @JsonKey(name: 'release_date') String releaseDate,
       int id,
+      @JsonKey(name: 'original_name') String name,
+      @JsonKey(name: 'first_air_date') String firstAirDate,
       @JsonKey(name: 'vote_average') double voteAverage,
       double popularity,
       bool video,
@@ -424,6 +465,12 @@ abstract class _Movie implements Movie {
   String get releaseDate;
   @override
   int get id;
+  @override
+  @JsonKey(name: 'original_name')
+  String get name;
+  @override
+  @JsonKey(name: 'first_air_date')
+  String get firstAirDate;
   @override
   @JsonKey(name: 'vote_average')
   double get voteAverage;

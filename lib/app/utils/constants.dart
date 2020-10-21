@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 
 const String kUrlBase = "https://api.themoviedb.org/3";
 const String kUrlDiscover = "/discover/movie";
+const String kUrlPopularMovies = "/movie/popular";
+const String kUrlNowPlaying = "/movie/now_playing";
+const String kUrlTopRated = "/movie/top_rated";
+const String kUrlTelevision = "/discover/tv";
 const String kUrlMovieDetail = "/movie/:id";
 const String kUrlMovieCredits = "/credits";
 const String kUrlMoviesGenres = "/genre/movie/list";

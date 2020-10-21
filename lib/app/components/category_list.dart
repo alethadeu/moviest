@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:moviest/app/utils/constants.dart';
 
 class CategoryList extends StatefulWidget {
-  CategoryList({Key key}) : super(key: key);
+  final Function(String) callBackList;
+  CategoryList({Key key, this.callBackList}) : super(key: key);
 
   @override
   _CategoryListState createState() => _CategoryListState();
@@ -50,6 +51,7 @@ class _CategoryListState extends State<CategoryList> {
           var newPosition = (index * 60) + (kDefaultPadding / 2);
           _scrollController.animateTo(newPosition,
               curve: Curves.easeInOut, duration: Duration(milliseconds: 300));
+          widget.callBackList(categories[index]);
         },
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

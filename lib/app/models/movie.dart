@@ -17,6 +17,8 @@ abstract class Movie with _$Movie {
       String overview,
       @JsonKey(name: 'release_date') String releaseDate,
       int id,
+      @JsonKey(name: 'original_name') String name,
+      @JsonKey(name: 'first_air_date') String firstAirDate,
       @JsonKey(name: 'vote_average') double voteAverage,
       double popularity,
       bool video,

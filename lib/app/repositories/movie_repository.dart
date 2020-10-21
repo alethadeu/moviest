@@ -25,6 +25,19 @@ class MovieRepository {
     return MovieResponse.fromJson(response.data);
   }
 
+  Future<MovieResponse> getMovieByCategory(String urlCategory) async {
+    var response = await dio.get(urlCategory, queryParameters: {
+      'api_key': kApiKey,
+      'language': kLanguage,
+      'sort_by': kSort,
+      'include_adult': kAdult,
+      'include_video': kVideo,
+      'page': kPage
+    });
+
+    return MovieResponse.fromJson(response.data);
+  }
+
   Future<GenreResponse> getAllGenres() async {
     var response = await dio.get(kUrlMoviesGenres,
         queryParameters: {'api_key': kApiKey, 'language': kLanguage});

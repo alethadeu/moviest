@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:moviest/app/components/backdrop_rating.dart';
-import 'package:moviest/app/components/genres.dart';
 import 'package:moviest/app/components/genres_movie_detail.dart';
 import 'package:moviest/app/components/title_header.dart';
 import 'package:moviest/app/models/cast.dart';
@@ -56,6 +55,7 @@ class _MovieDetailsPageState
             padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
             child: Text(widget.movie.overview),
           ),
+          SizedBox(height: kDefaultPadding),
           buildCast()
         ],
       ),
